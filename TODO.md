@@ -23,4 +23,4 @@
 5. Extras / Long-Term
   Notifications
   DMs
-  Explore -> finding hashtags
+  Explore -> finding hashtagsENV_DIR:C:\Users\NyN\.virtualenvs\myTweetme-DB-GZFMB
