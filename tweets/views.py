@@ -5,8 +5,7 @@ from .models import Tweet
 
 def home_view(request, *args, **kwargs):
     print(f"Args:{args} | Kwargs: {kwargs}")
-    return HttpResponse("<h1>Hi Mom!</h1>")
-
+    return render(request, 'pages/home.html', context={}, status=200)
 
 def tweet_detail_view(request, tweet_id, *args, **kwargs):
     data = {
