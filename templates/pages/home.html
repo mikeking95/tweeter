@@ -1,5 +1,40 @@
 {% extends '_base.html' %}
+
 {% block content %}
 <h1>Hi Mom!!</h1>
 <p>... :D</p>
+
+<div id="tweets">Replace me!</div>
+<script>
+    const tweetsElement = document.getElementById('tweets') // get an html element
+    tweetsElement.innerHTML = "Loading..." //set html
+    // var el1 = "<h1>Hi Mom!</h1>"
+    // var el2 = "<h1>Hi Dad!</h1>"
+    // var el3 = "<h1>Hi Sister!</h1>"
+    // tweetsElement.innerHTML = el1 + el2 + el3
+
+    const xhr = new XMLHttpRequest()
+    const method = 'GET' // 'POST'
+    const url = '/tweets'
+    const responseType = "json"
+
+    xhr.responseType = responseType
+    xhr.open(method, url)
+    xhr.onload = function () {
+        const serverResponse = xhr.response
+        const listedItems = serverResponse.response //array
+        var finalTweetStr = ""
+        var i;
+        for (i = 0; i < listedItems.length; i++) {
+            console.log(i)
+            console.log(listedItems[i])
+            var currentItem = "<h1>" + listedItems[i].id + "</h1>" + "<p>" + listedItems[i].content + "</p>"
+            finalTweetStr += currentItem
+        }
+        tweetsElement.innerHTML = finalTweetStr
+    }
+    xhr.send();
+
+</script>
+
 {% endblock content %}
