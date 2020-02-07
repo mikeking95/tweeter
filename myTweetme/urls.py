@@ -26,9 +26,9 @@ from tweets.views import(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_view),
     path('tweets/<int:tweet_id>/', tweet_detail_view),
     path('tweets/', tweet_list_view),
     path('about/',about_view),
 
-    path('', home_view),
 ]

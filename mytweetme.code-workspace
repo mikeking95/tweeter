@@ -1,7 +1,11 @@
 {
 	"folders": [
 		{
-			"path": "/f/_Projects/2020/myTweetme"
+			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"python.pythonPath": "/Users/Nyn/.local/share/virtualenvs/myTweetme-JHJPVZCg/bin/python"
+	}
+	
 }
