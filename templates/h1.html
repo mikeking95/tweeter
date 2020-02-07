@@ -1,0 +1,77 @@
+{% extends '_base.html' %}
+
+{%block head_title%}Home{%endblock head_title%}
+{% block css%}<style>
+    body {
+        /* background-image: linear-gradient(2.1deg, rgba(116, 253, 210, 1) 5%, rgba(0, 191, 247, 1) 95.8%); */
+        background-image: radial-gradient(circle 705px at 3.8% 26.2%, rgba(227, 229, 255, 1) 0%, rgba(135, 145, 255, 1) 100.2%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    div .card {
+        outline: 2px solid black;
+    }
+
+    #tweets {
+        box-shadow: 2px 2px 8px 0;
+        justify-content: space-around;
+    }
+</style>{%endblock%}
+{% block content %}
+<h1>Hi Mom!!</h1>
+<p>... :D</p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-columns">
+
+            <div id="tweets">Replace me!</div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    const tweetsElement = document.getElementById('tweets') // get an html element
+    tweetsElement.innerHTML = "Loading..." //set html
+    const xhr = new XMLHttpRequest()
+    const method = 'GET'
+    const url = '/tweets'
+    const responseType = "json"
+
+    function handleDidLike(tweet_id, currentCount) {
+        console.log(tweet_id, currentCount)
+        return
+    }
+
+    function LikeBtn() {
+        return "<button class='btn btn-primary btn-sm' onclick=handleDidLike(" + tweet.id + "," + tweet.likes + ")> " + tweet.likes + "Likes +</button>"
+
+    }
+
+    function formatTweetElement(tweet) {
+        var formattedTweet = "<div class='mb-4 tweet' id='tweet-" + tweet.id + "'><p>" + tweet.content + "</p><div class='btn-group'>" + LikeBtn() + "</div></div>"
+        return formattedTweet
+    }
+
+    xhr.responseType = responseType
+    xhr.open(method, url)
+    xhr.onload = function () {
+        const serverResponse = xhr.response
+        const listedItems = serverResponse.response //array
+        var finalTweetStr = formatTweetElement()
+        var i;
+        for (i = 0; i < listedItems.length; i++) {
+            console.log(i)
+            var currentItem = "<div class='card bg-transparent'><div class='card card-title'><div class='card-body'>" + listedItems[i].id + "</div>" + "<span>" + listedItems[i].content
+            finalTweetStr += currentItem
+        }
+        tweetsElement.innerHTML = finalTweetStr
+    }
+    xhr.send();
+
+</script>
+
+{% endblock content %}

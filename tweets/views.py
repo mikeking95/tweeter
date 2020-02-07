@@ -16,6 +16,10 @@ def home_view(request, *args, **kwargs):
     print(f"Args:{args} | Kwargs: {kwargs}")
     return render(request, 'pages/home.html', context={}, status=200)
 
+def about_view(request, *args, **kwargs):
+    print(f"Args:{args} | Kwargs: {kwargs}")
+    return render(request, 'pages/about.html', context={}, status=200)
+
 def tweet_detail_view(request, tweet_id, *args, **kwargs):
     data = {
         "id": tweet_id,
