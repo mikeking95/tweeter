@@ -25,7 +25,7 @@ SECRET_KEY = 'c)pw^azc2t#ddc+i_#1&jio%fq$17^v+ag7yd7_8--$d&+22cb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','.nyntofive.com','nynlabs.com']
 
 
 # Application definition
