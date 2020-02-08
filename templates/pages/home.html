@@ -76,6 +76,9 @@ Home{% endblock head_title%}
                 } else {
                     alert("An error occured. Please try again.")
                 }
+            } else if (xhr.status === 401) {
+                alert("You must login to do that!")
+                window.location.href = "login/"
             } else if (xhr.status === 500) {
                 alert("There was a server error. Please try again.")
             }
