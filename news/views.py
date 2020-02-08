@@ -2,8 +2,34 @@ from django.shortcuts import render
 from django.conf import settings
 from newsapi import NewsApiClient
 
+from .models import Headline
+
 API_KEY = settings.NEWS_API_KEY
 api = NewsApiClient(api_key=API_KEY)
+
+def get_headlines(request):
+    '''
+    #TODO: have this run daily to gather news
+    ex. api.get_top_headlines()
+    ex. api.get_everything(q='bitcoin')
+        api.get_sources()
+
+    '''
+    headlines=api.get_top_headlines()
+    l = headlines['articles']
+    for article in l:
+        headline = Headline.objects.create(
+            source = article['source']['name'],
+            author = article['author'],
+            title = article['title'],
+            description = article['description'],
+            url = article['url'],
+            urlToImage = article['urlToImage'],
+            publishedAt = article['publishedAt'],
+            content = article['content']
+        )
+        headline.save()
+        
 
 def tech_news(request):
     '''
