@@ -4,3 +4,6 @@ venv/
 *.code-workspace*
 __pycache__
 *.pyc
+
+products/
+.vscode/
