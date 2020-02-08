@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #thirdies
+    'rest_framework',
+     #internal
     'tweets',
     'news',
     'django_extensions',
@@ -122,3 +125,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
 LOGIN_URL= 'login/'
+MAX_TWEET_LENGTH = 240

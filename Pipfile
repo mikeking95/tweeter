@@ -14,6 +14,7 @@ pillow = "*"
 ipython = "*"
 django-extensions = "*"
 newsapi-python = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"
