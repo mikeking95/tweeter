@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(BASE_DIR) # sanity check ;D
@@ -25,7 +24,7 @@ SECRET_KEY = 'c)pw^azc2t#ddc+i_#1&jio%fq$17^v+ag7yd7_8--$d&+22cb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.nyntofive.com','nynlabs.com']
+ALLOWED_HOSTS = ['.localhost','127.0.0.1','.nyntofive.com','nynlabs.com']
 
 
 # Application definition
@@ -121,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY")

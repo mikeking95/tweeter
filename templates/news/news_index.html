@@ -1,0 +1,29 @@
+{% extends 'news_base-mdb.html' %}
+{% block title %}Daily Tech News{% endblock title %}
+{% block content %}
+<div class="jumbotron" style="color:black;">
+
+    <h1 class='Tech News'>
+        Get The latest news on our website
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        {% for new, des, i in mylist %}
+        <div class="col-sm-4">
+            <div class="card z-depth-5">
+                <img class="card-img-top" src="{{ i }}" alt="Article Image">
+                <div class="card-body">
+                    <h4 class="card-title"><a>{{ new }}</a></h4>
+                    <p class="card-text">{{ des }}</p>
+                    {{ value|linebreaks }}
+                    <a href="#" class="btn btn-primary">Button</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
