@@ -1,0 +1,38 @@
+{% extends 'news_base-mdb.html' %}
+{% block title %}Daily Tech News{% endblock title %}
+{% block content %}
+<div class="container wrapper">
+
+    <div class="jumbotron" style="color:black;">
+
+        <h1 class='News Api'>
+            Get The latest news on our website
+    </div>
+
+
+    <!-- News Cards -->
+    <div class="container">
+        <div class="row">
+
+            <!-- Card Loop -->
+            {% for headline in latest_headlines %}
+            <div class="col-sm-4">
+                <div class="card mb-5 wow fadeInUp data-wow-delay='0.6s' z-depth-2">
+                    <img class="card-img-top" src="{{ headline.urlToImage }}" alt="Article Image">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>{{ headline.title }}</a></h4>
+                        <p class="card-text">{{ headline.description }}</p>
+                        {{ value|linebreaks }}
+                        <a href="{{ headline.url }}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- End Loop -->
+        </div>
+    </div>
+    <!-- End Cards -->
+    {% endblock content %}
+
+</div>

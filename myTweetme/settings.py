@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     #thirdies
     'rest_framework',
      #internal
+    'products',
     'tweets',
     'news',
     'django_extensions',

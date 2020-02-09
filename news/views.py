@@ -7,6 +7,14 @@ from .models import Headline
 API_KEY = settings.NEWS_API_KEY
 api = NewsApiClient(api_key=API_KEY)
 
+def index(request, *args, **kwargs):
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
+    headlines = Headline.objects.all()
+    context = {'latest_headlines':headlines}
+    return render(request, "news/newspaper.html", context, status=200)
+
 def get_headlines(request):
     '''
     #TODO: have this run daily to gather news
@@ -29,7 +37,7 @@ def get_headlines(request):
             content = article['content']
         )
         headline.save()
-        
+
 
 def tech_news(request):
     '''
