@@ -26,7 +26,7 @@ from tweets.views import(
 
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', home_view),
     path('about/',about_view),
     path('create-tweet', tweet_create_view),
