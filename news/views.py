@@ -37,6 +37,15 @@ def get_headlines(request):
             content = article['content']
         )
         headline.save()
+    desc,news,img=[],[],[]
+    for i in range(len(l)):
+        f = l[i]
+        news.append(f['title'])
+        desc.append(f['description'])
+        img.append(f['urlToImage'])
+    mylist = zip(news,desc,img)
+    return render(request, 'news/news_index.html', context={"mylist":mylist})
+
 
 
 def tech_news(request):
