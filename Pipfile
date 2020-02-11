@@ -16,6 +16,7 @@ django-extensions = "*"
 newsapi-python = "*"
 djangorestframework = "*"
 jupyter = "*"
+selenium = "*"
 
 [requires]
 python_version = "3.6"
