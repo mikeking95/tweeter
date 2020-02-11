@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #thirdies
     'rest_framework',
+    'django_extensions',
      #internal
     # 'products',
     'tweets',
     'news',
-    'django_extensions',
+    'knifeshop',
 ]
 
 MIDDLEWARE = [

@@ -17,6 +17,7 @@ newsapi-python = "*"
 djangorestframework = "*"
 jupyter = "*"
 selenium = "*"
+pygraphviz = "*"
 
 [requires]
 python_version = "3.6"

@@ -8,3 +8,4 @@ __pycache__
 
 products/
 .vscode/
+knifeshop/node_modules/
