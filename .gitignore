@@ -5,6 +5,6 @@ venv/
 *.code-workspace*
 __pycache__
 *.pyc
-
+node_modules/
 products/
 .vscode/
