@@ -24,14 +24,11 @@ from tweets.views import(
     about_view
 )
 
-
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', home_view),
-    path('news/', include('news.urls')),
-    path('about/',about_view),
     path('create-tweet', tweet_create_view),
     path('tweets/', tweet_list_view),
     path('tweets/<int:tweet_id>', tweet_detail_view),
-
+    path('api/tweets/', include('tweets.urls'))
 ]

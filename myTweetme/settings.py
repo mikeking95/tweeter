@@ -126,4 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
 LOGIN_URL= 'login/'
+
 MAX_TWEET_LENGTH = 240
+TWEET_ACTION_OPTIONS = ["like", "unlike", "retweet"]
+APPEND_SLASH=False
