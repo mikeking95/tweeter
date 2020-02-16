@@ -1,9 +1,10 @@
+*.env
 *.pyc
 venv/
 .vscode/
 *.code-workspace*
 __pycache__
 *.pyc
-
+node_modules/
 products/
 .vscode/

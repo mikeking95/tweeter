@@ -13,6 +13,11 @@ pandas = "*"
 pillow = "*"
 ipython = "*"
 django-extensions = "*"
+newsapi-python = "*"
+djangorestframework = "*"
+jupyter = "*"
+werkzeug = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6"
