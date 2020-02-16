@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "static-root")
 
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
-LOGIN_URL= 'login/'
+LOGIN_URL= '/login'
 
 MAX_TWEET_LENGTH = 240
 TWEET_ACTION_OPTIONS = ["like", "unlike", "retweet"]
@@ -140,6 +140,7 @@ TWEET_ACTION_OPTIONS = ["like", "unlike", "retweet"]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_URLS_REGEX = r'^/api/.*$'
+
 
 DEFAULT_RENDERER_CLASSES = [
         'rest_framework.renderers.JSONRenderer',
@@ -152,9 +153,9 @@ if DEBUG:
     DEFAULT_RENDERER_CLASSES += [
         'rest_framework.renderers.BrowsableAPIRenderer',
     ]
-    # DEFAULT_AUTHENTICATION_CLASSES += [
-    #     'tweetme2.rest_api.dev.DevAuthentication'
-    # ]
+    DEFAULT_AUTHENTICATION_CLASSES += [
+        'myTweetme.rest_api.dev.DevAuthentication'
+    ]
 REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': DEFAULT_AUTHENTICATION_CLASSES,

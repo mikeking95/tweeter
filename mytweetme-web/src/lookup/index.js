@@ -1,3 +1,3 @@
-import { loadTweets } from './components'
+import { backendlookup } from './components'
 
-export {loadTweets}
+export { backendlookup }
