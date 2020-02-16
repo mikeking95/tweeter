@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 from newsapi import NewsApiClient
 
-from .models import Headline
+from .models import Headline, NewsItem
 
 API_KEY = settings.NEWS_API_KEY
 api = NewsApiClient(api_key=API_KEY)
@@ -13,7 +13,7 @@ def index(request, *args, **kwargs):
         username = request.user.username
     headlines = Headline.objects.all()
     context = {'latest_headlines':headlines}
-    return render(request, "news/newspaper.html", context, status=200)
+    return render(request, "news/headlines.html", context, status=200)
 
 def get_headlines(request):
     '''
@@ -48,7 +48,7 @@ def get_headlines(request):
 
 
 
-def tech_news(request):
+def crypto_news(request):
     '''
     ex. api.get_top_headlines()
     ex. api.get_everything(q='bitcoin')
