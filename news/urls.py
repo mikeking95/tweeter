@@ -6,6 +6,6 @@ from .models import Headline
 app_name = "news"
 urlpatterns = [
     path('', views.index, name="index"),
-    path('crypto/',views.crypto_news),
+    #path('headlines/',views.headlines_view, name="headlines_view"),
     path('get_news/', views.get_headlines, name='get_headlines'),
 ]
